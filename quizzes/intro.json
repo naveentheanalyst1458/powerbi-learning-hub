@@ -1,0 +1,64 @@
+{
+  "title": "What is Power BI?",
+  "resultTitle": "Topic 2 · What is Power BI?",
+  "passPercent": 80,
+  "markCompleteOnPass": true,
+  "scoreStorageKey": "pbi-topic2-quiz-last-score-v1",
+  "questions": [
+    {
+      "question": "What is the main purpose of Microsoft Power BI?",
+      "options": [
+        "To manage business transactions in an ERP system",
+        "To connect, analyse and visualize business data",
+        "To replace every operational database with Excel",
+        "To develop desktop applications for data entry"
+      ],
+      "correct": 1,
+      "why": "Power BI is Microsoft's business analytics platform for connecting to data, preparing it, analysing it and building interactive reports."
+    },
+    {
+      "question": "Your Excel file contains 'Koramangala' and 'koramangala ' as store names. Which Power BI component is most appropriate for standardizing the names?",
+      "options": [
+        "Power BI Mobile",
+        "Power BI Report View",
+        "Power Query Editor",
+        "Power BI Dashboard"
+      ],
+      "correct": 2,
+      "why": "Power Query Editor provides transformations such as Trim and Capitalize Each Word to standardize inconsistent text values."
+    },
+    {
+      "question": "After cleaning the names, Koramangala has two sales records: ₹45,000 and ₹30,000. What should a report display as its total sales?",
+      "options": [
+        "₹15,000",
+        "₹45,000",
+        "₹30,000",
+        "₹75,000"
+      ],
+      "correct": 3,
+      "why": "The two transactions belong to the same store. Total sales = ₹45,000 + ₹30,000 = ₹75,000."
+    },
+    {
+      "question": "Your manager wants to analyse whether company sales increased or decreased month by month. Which visual would you normally recommend?",
+      "options": [
+        "Line Chart",
+        "Card",
+        "Table with individual transactions",
+        "Gauge"
+      ],
+      "correct": 0,
+      "why": "A Line Chart is well suited to displaying a trend over time. A Card is better for showing an individual KPI."
+    },
+    {
+      "question": "You have completed a report in Power BI Desktop. Where would you normally publish it so authorized colleagues can access and collaborate on it online?",
+      "options": [
+        "Power Query Editor",
+        "Power BI Service",
+        "Power BI Desktop Data View",
+        "Microsoft Excel Power Pivot"
+      ],
+      "correct": 1,
+      "why": "Power BI Service is the cloud platform used to publish, manage, share and collaborate on Power BI content, subject to access permissions and licensing."
+    }
+  ]
+}
