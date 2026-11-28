@@ -1,43 +1,37 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="A free Power BI learning hub with simple notes, hands-on examples and short quizzes." name="description"/>
-<title>Power BI Learning Hub | Learn by Doing</title>
-<link rel="stylesheet" href="css/styles.css"/>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Power BI Learning Hub · Topics 1 & 2 Complete Preview</title>
+<meta name="description" content="Power BI Learning Hub: free student notes, practical examples, visual learning and short quizzes.">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div class="shell">
-<aside aria-label="Learning navigation" class="sidebar">
-<div class="brand">
-<div aria-hidden="true" class="logo"><svg fill="none" viewbox="0 0 32 32"><rect fill="#19304D" height="9" rx="2" width="5" x="4" y="19"></rect><rect fill="#19304D" height="14" rx="2" width="5" x="11" y="14"></rect><rect fill="#19304D" height="20" rx="2" width="5" x="18" y="8"></rect><rect fill="#19304D" height="24" rx="2" width="4" x="25" y="4"></rect></svg></div>
-<div><h1>Power BI<br/>Learning Hub</h1><p>STUDENT PORTAL</p></div>
-</div>
-<nav>
-<div class="nav-label">LEARN</div>
-<div class="nav-links">
-<a class="active" href="#home"><span class="num">⌂</span> Dashboard</a>
-<a href="#curriculum"><span class="num">▤</span> Course modules</a>
-<a href="#lesson"><span class="num">✎</span> Lesson notes</a>
-</div>
-</nav>
-<div class="sidebar-note"><strong><span class="dot"></span> Free learning resource</strong><p>Built for students. No login required. Study on your phone or laptop.</p></div>
+<div class="app">
+<aside class="sidebar" id="sidebar" aria-label="Course navigation">
+  <div class="identity"><div class="symbol" aria-hidden="true">▥</div><div><b>Power BI Learning Hub</b><small>By Naveen · Data Analytics Mentor</small></div></div>
+  <nav aria-label="Learning navigation"><button class="side-home active" id="home-nav">⌂ &nbsp; Learning dashboard</button><div class="side-label">Course curriculum</div><div class="chapters" id="sidebar-chapters"></div></nav>
+  <div class="side-footer"><b>📘 Free learning notes</b><p>Read at your pace. Progress stays in this browser on this device.</p></div>
 </aside>
-<main class="main" id="home">
-<div class="topbar"><div class="crumb">Learning Hub  /  <strong>Power BI</strong></div><div class="top-right"><span>Student edition</span><span aria-hidden="true" class="avatar">BI</span></div></div>
-<div class="content">
-<section aria-labelledby="hero-title" class="hero">
-<div><div class="eyebrow">YOUR LEARNING STARTS HERE</div><h2 id="hero-title">Turn data into<br/>better decisions.</h2><p>Learn Power BI step by step with clear notes, business examples, and quick checks to test your understanding.</p><button class="cta" id="start-btn">Start learning <span aria-hidden="true">→</span></button></div>
-<div aria-hidden="true" class="hero-graphic"><div class="mock"><div class="mock-top"><span>Sales Overview</span><div class="mock-dot"></div></div><div class="mock-kpis"><div class="mock-kpi"><span>Total Sales</span><b>₹24.8L</b></div><div class="mock-kpi"><span>Growth</span><b>+18%</b><div class="spark"></div></div></div><div class="bars"><div style="height:47%"></div><div style="height:65%"></div><div style="height:52%"></div><div style="height:82%"></div><div style="height:71%"></div><div style="height:100%"></div><div style="height:88%"></div></div></div></div>
-</section>
-<div aria-label="Learning hub status" class="stats"><div class="stat"><span aria-hidden="true" class="stat-icon">▦</span><div><strong>9</strong><small>Topics in roadmap</small></div></div><div class="stat"><span aria-hidden="true" class="stat-icon">✎</span><div><strong>1</strong><small>Starter lesson ready</small></div></div><div class="stat"><span aria-hidden="true" class="stat-icon">✓</span><div><strong id="progress-number">0 / 1</strong><small>Lesson completed</small></div></div></div>
-<section aria-labelledby="curriculum-heading" id="curriculum"><div class="section-heading"><div><h3 id="curriculum-heading">Explore the curriculum</h3><p>Start with the basics. More detailed lessons can be added over time.</p></div><input aria-label="Search course modules" class="search" id="module-search" placeholder="Search topics..." type="search"/></div><div class="modules" id="module-grid"></div></section>
-<section aria-labelledby="lesson-title" id="lesson"><div class="section-heading"><div><h3>Learning notes</h3><p>One concept, one example, one practice activity.</p></div></div>
-<article class="lesson"><div class="lesson-head"><div><div class="lesson-kicker" id="lesson-kicker">MODULE 01 · READY TO LEARN</div><h4 id="lesson-title">What is Power BI?</h4><p id="lesson-subtitle">Understand the purpose before learning the buttons.</p></div><button aria-pressed="false" class="complete" id="complete-btn">✓ Mark completed</button></div>
-<div id="ready-lesson"><div aria-label="Lesson sections" class="tabs" role="tablist"><button aria-controls="panel-concept" aria-selected="true" data-tab="concept" id="tab-concept" role="tab">Concept</button><button aria-controls="panel-flow" aria-selected="false" data-tab="flow" id="tab-flow" role="tab">How it works</button><button aria-controls="panel-quiz" aria-selected="false" data-tab="quiz" id="tab-quiz" role="tab">Mini quiz</button></div>
-<div aria-labelledby="tab-concept" class="lesson-body" id="panel-concept" role="tabpanel">
+<button class="nav-overlay" id="nav-overlay" aria-label="Close navigation"></button>
+<div class="body">
+<header class="topbar"><button type="button" id="mobile-menu" class="mobile-menu" aria-label="Open course navigation" aria-expanded="false">☰</button><div class="breadcrumbs">LEARNING HUB &nbsp;/&nbsp; <strong id="crumb">Dashboard</strong></div><div class="top-actions"><div class="search-wrap"><span class="search-ic" aria-hidden="true">⌕</span><input aria-label="Search chapters, topics or concepts" id="topic-search" autocomplete="off" placeholder="Search DAX, Power Query, RLS…"><div class="search-panel" id="search-results" hidden></div></div><div class="mentor-pill"><div class="avatar" aria-hidden="true">N</div><span>Learn with Naveen</span></div></div></header>
+<main class="container">
+<div id="home-view" class="view">
+<section class="banner" aria-label="Welcome"><div><span class="eyebrow">WELCOME TO POWER BI LEARNING HUB</span><h1>Learn Power BI with practical business examples.</h1><p>Structured notes, visual demonstrations and hands-on practice. Understand the concepts before building the reports.</p><button class="primary" id="start-learning">Explore the first lesson &nbsp; →</button></div><div class="hero-visual" aria-hidden="true"><div class="visual-top"><span>Sales Performance</span><span>● SAMPLE REPORT</span></div><div class="visual-grid"><div class="visual-kpi"><b>₹10.5L</b><small>Actual sales</small></div><div class="visual-kpi"><b>₹10.5L</b><small>Sales target</small></div></div><div class="visual-bars"><i style="height:58%"></i><i style="height:76%"></i><i style="height:43%"></i><i style="height:88%"></i><i style="height:68%"></i><i style="height:100%"></i><i style="height:78%"></i></div></div></section>
+<div class="metrics" aria-label="Learning summary"><div class="metric"><div class="metric-head"><span class="metric-icon">▦</span>Course modules</div><b id="metric-modules">9</b><small>From beginner to advanced</small></div><div class="metric"><div class="metric-head"><span class="metric-icon">📖</span>Published lessons</div><b id="metric-ready">2</b><small>More lessons planned</small></div><div class="metric"><div class="metric-head"><span class="metric-icon">✓</span>Your published-lesson progress</div><b id="metric-percent">0%</b><div class="track"><div id="metric-track"></div></div><small id="metric-status">0 of 2 published lessons completed</small></div></div>
+<div class="section-top"><div><h2>Start your learning journey</h2><p>Pick up a concept, then practise it with a business example.</p></div></div>
+<div class="panel-grid"><section class="white-card"><h3>Recommended starting point</h3><p>Build a strong foundation before learning Power Query and DAX.</p><button class="feature-row" id="continue-lesson"><span class="feature-icon">📘</span><span><b>01 · What is Business Intelligence?</b><small>Retail, Finance &amp; HR · notes, visual lab, practice and quiz</small></span><span class="arrow-right">→</span></button><button class="feature-row" id="next-chapter"><span class="feature-icon">▤</span><span><b>02 · Getting &amp; Transforming Data</b><small>Topics planned · Power Query, cleaning and more</small></span><span class="arrow-right">→</span></button></section><section class="white-card mentor-card"><span class="mentor-badge">YOUR LEARNING MENTOR</span><h3>Learn with Naveen</h3><p>Data Analytics Mentor · Learn through practical examples, clear notes and real business problems. Designed for self-paced revision after class.</p><div class="topic-chips"><span class="chip">Power Query</span><span class="chip">Data Modeling</span><span class="chip">DAX</span><span class="chip">Reports</span><span class="chip">Power BI Service</span></div></section></div>
+<div class="section-top"><div><h2>Explore course modules</h2><p>See the full learning path. Published lessons are clearly identified.</p></div><span class="pill">FREE FOR STUDENTS</span></div><div class="module-grid" id="module-cards"></div>
+</div>
+<div id="lesson-view" class="view" hidden>
+<div class="lesson-heading"><button class="back" id="back-home">← Back to dashboard</button><div class="lesson-head-row"><div><span class="eyebrow" id="lesson-kicker">CHAPTER 01 · INTRODUCTION</span><h1 id="lesson-title">What is Power BI?</h1><p id="lesson-subtitle">Understand the purpose of Power BI before learning its features.</p></div><button class="secondary" id="mark-done">✓ Mark completed</button></div></div>
+<div class="lesson-content"><div class="tabs" id="lesson-tabs" role="tablist" aria-label="Lesson activities"><button class="tab" role="tab" aria-selected="true" data-tab="notes">📖 &nbsp;Notes</button><button class="tab" role="tab" aria-selected="false" data-tab="visual">◈ &nbsp;Visual Lab</button><button class="tab" role="tab" aria-selected="false" data-tab="practice">✎ &nbsp;Practice</button><button class="tab" role="tab" aria-selected="false" data-tab="quiz">✓ &nbsp;Quiz</button></div><div id="lesson-stage" class="lesson-pane"></div></div>
+</div>
+<footer class="foot"><span>Power BI Learning Hub · Free student notes</span><span>Topics 1–2 · Modular V2 development preview</span></footer>
+</main></div></div>
+
+<template id="original-notes">
 <div class="lesson-summary"><span class="reading-time">CHAPTER 01 · ABOUT 10 MINUTES</span><strong>What you will learn</strong><p>Why businesses use Power BI, how it works, and how a business question becomes a report.</p></div>
 <h5>1. Start with the business problem</h5>
 <p>Imagine a retail company with three stores. Every month, the manager receives separate Excel files for sales and sales targets. The manager wants to know: <strong>Are we meeting our targets, and which store needs attention?</strong></p>
@@ -70,17 +64,10 @@
 <h5>7. Five things to remember</h5>
 <ol class="notes-list"><li>Start with the business question, not the chart.</li><li>Use Power Query to prepare the data.</li><li>Use the semantic model and DAX for analysis.</li><li>Pick visuals that make comparisons easy.</li><li>Validate your numbers before sharing a report.</li></ol>
 <div class="exercise"><strong>Try it yourself (no software needed)</strong><p>For a school with student marks and attendance, write down <strong>two useful KPIs</strong>, <strong>one chart</strong>, and <strong>one decision</strong> the principal could make from the report.</p></div>
-</div>
-<div aria-labelledby="tab-flow" class="lesson-body" hidden="" id="panel-flow" role="tabpanel"><h5>The basic Power BI workflow</h5><p>Follow this sequence to understand how a report is created.</p><div class="flowchart"><div class="flow-box"><b>1. Connect</b><small>Excel / SQL</small></div><div class="arrow">→</div><div class="flow-box"><b>2. Transform</b><small>Power Query</small></div><div class="arrow">→</div><div class="flow-box"><b>3. Model</b><small>Relationships / DAX</small></div><div class="arrow">→</div><div class="flow-box"><b>4. Visualise</b><small>Interactive report</small></div></div><div class="note"><strong>Example output</strong><br/>A report that displays sales by month, best-performing stores, and the gap between Actual Sales and Sales Target.</div><div class="exercise"><strong>Practice task</strong><p>Think of a business question that you cannot answer quickly using raw Excel rows. What visual would help answer it?</p></div></div>
-<div aria-labelledby="tab-quiz" class="lesson-body" hidden="" id="panel-quiz" role="tabpanel"><h5>Quick knowledge check</h5><p>Which Power BI component is primarily used to clean and transform data before loading it into a model?</p><div class="quiz-options"><button class="quiz-option" data-answer="incorrect">Power BI App</button><button class="quiz-option" data-answer="correct">Power Query</button><button class="quiz-option" data-answer="incorrect">Card visual</button><button class="quiz-option" data-answer="incorrect">PowerPoint</button></div><div aria-live="polite" class="answer" id="answer" role="status"></div></div></div>
-<div class="lesson-body" hidden="" id="planned-lesson"><h5>Coming next</h5><p>This module is part of the course roadmap. Its detailed notes and exercises will be added in a future update.</p><div class="roadmap-list" id="planned-list"></div></div>
-</article>
-</section>
-<div class="footer"><span>Power BI Learning Hub · Free student notes</span><span>Starter version · No account required</span></div>
-</div>
-</main>
-</div>
+</template>
+<template id="original-flow"><h5>The basic Power BI workflow</h5><p>Follow this sequence to understand how a report is created.</p><div class="flowchart"><div class="flow-box"><b>1. Connect</b><small>Excel / SQL</small></div><div class="arrow">→</div><div class="flow-box"><b>2. Transform</b><small>Power Query</small></div><div class="arrow">→</div><div class="flow-box"><b>3. Model</b><small>Relationships / DAX</small></div><div class="arrow">→</div><div class="flow-box"><b>4. Visualise</b><small>Interactive report</small></div></div><div class="note"><strong>Example output</strong><br/>A report that displays sales by month, best-performing stores, and the gap between Actual Sales and Sales Target.</div><div class="exercise"><strong>Practice task</strong><p>Think of a business question that you cannot answer quickly using raw Excel rows. What visual would help answer it?</p></div></template>
+<template id="original-quiz"><h5>Quick knowledge check</h5><p>Which Power BI component is primarily used to clean and transform data before loading it into a model?</p><div class="quiz-options"><button class="quiz-option" data-answer="incorrect">Power BI App</button><button class="quiz-option" data-answer="correct">Power Query</button><button class="quiz-option" data-answer="incorrect">Card visual</button><button class="quiz-option" data-answer="incorrect">PowerPoint</button></div><div aria-live="polite" class="answer" id="answer" role="status"></div></template>
 <script src="config/course.js"></script>
+<script src="generated/lesson-notes.js"></script>
 <script src="js/app.js"></script>
-</body>
-</html>
+</body></html>

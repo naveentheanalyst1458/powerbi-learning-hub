@@ -1,29 +1,27 @@
-# Power BI Learning Hub
+# Power BI Learning Hub — Modular V2
 
-Power BI Notes, DAX, Practical Examples and Exercises
+Development preview based on the approved Topics 1 & 2 version, not on the older single-lesson production site. The original visual labs, quizzes, practice and progress logic are preserved. The notes use Markdown with trusted HTML for existing richly styled tables and callouts.
 
-## Modular foundation v1
+## Open the website
+Extract the entire ZIP and double-click `index.html`. The prebuilt JavaScript works locally without a server or network connection. No Python installation is needed just to view the site.
 
-This is a refactor of the existing development branch (00fbeb283412049dbf1c57a50b51a9b4130f0143). The visual design, available lesson and existing interactions are unchanged.
+## Edit a lesson
+1. Edit `content/business-intelligence.md` or `content/intro.md`.
+2. From the project root, install the build dependency once: `python -m pip install -r requirements.txt`.
+3. Regenerate the browser-ready notes: `python tools/build_notes.py`.
+4. Refresh the browser and check the Notes tab. Commit both the Markdown and generated JavaScript when approved.
 
-| File | Responsibility |
-|---|---|
-| index.html | Page structure and current lesson markup |
-| css/styles.css | Shared styles and responsive layout |
-| config/course.js | Existing curriculum catalogue |
-| js/app.js | Module search, lesson navigation, tabs, quiz and browser-local progress |
+Markdown source is the authoring source of truth. The website reads `generated/lesson-notes.js`, not the raw Markdown. This avoids local browser fetch restrictions and works on GitHub Pages. No automatic build or Drive sync is configured. Only trusted author content should be compiled (HTML is allowed).
 
-Open index.html locally to preview, or serve the directory with `python -m http.server 8000`. Keep the file paths intact.
+## File responsibilities
+- `index.html`: page shell and legacy fallback templates.
+- `css/styles.css`: existing visual design.
+- `config/course.js`: curriculum metadata and topic IDs.
+- `content/*.md`: written lesson sources named by topic ID.
+- `tools/build_notes.py`: shared Markdown compiler.
+- `generated/lesson-notes.js`: compiled lesson content.
+- `js/app.js`: original navigation, labs, practice, quizzes and progress; shared notes lookup.
 
-## Deployment
+The next stage will extract quiz question data and implement a common quiz engine. Custom visual labs still have topic-specific logic; new topics also require curriculum registration and activities. Do not mark unfinished topics ready until their activities exist.
 
-Upload the contents (not the enclosing directory) to the development branch. Preserve the directory structure. Review and test before merging into main. Do not change GitHub Pages publishing settings during development.
-
-## Deferred work
-
-Markdown lesson rendering, JSON question banks, multiple independent lessons, reusable quiz engine, and Google Drive resource links are future steps. The current source includes only the existing introduction lesson and one quiz question; the previously approved additional content is not included in the supplied ZIP.
-
-## Validation
-- Static verification: original HTML structure, CSS, course data and application code preserved exactly apart from extraction and surrounding whitespace/comments.
-- JavaScript syntax checks passed for both scripts.
-- Browser testing could not run because the environment blocks local browser navigation. Manually check appearance, search, navigation, quiz and progress before merging.
+Deploy only after reviewing the development branch. The ZIP does not change GitHub or Google Drive.
