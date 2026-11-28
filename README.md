@@ -1,4 +1,4 @@
-# Power BI Learning Hub — Modular V3
+# Power BI Learning Hub — Modular V4
 
 Development preview based on the approved Topics 1 & 2 version, not on the older single-lesson production site. The original visual labs, practice, quiz questions and topic completion rules are preserved; both quizzes use a common renderer. The notes use Markdown with trusted HTML for existing richly styled tables and callouts.
 
@@ -20,9 +20,9 @@ Markdown source is the authoring source of truth. The website reads `generated/l
 - `content/*.md`: written lesson sources named by topic ID.
 - `tools/build_notes.py`: shared Markdown compiler.
 - `generated/lesson-notes.js`: compiled lesson content.
-- `js/app.js`: navigation, labs, practice and progress; shared notes and quiz lookup.
+- `js/app.js`: navigation, practice and progress; shared notes and quiz lookup.
 
-The next stage will organise reusable visual lab components. Custom visual labs still have topic-specific logic; new topics also require curriculum registration and activities. Do not mark unfinished topics ready until their activities exist.
+The shared lab registry now routes visual labs by topic ID. The scenario-comparison component is data-driven; the Power BI workflow is an isolated specialised component with its own internal dataset and steps. New custom interactions still need code, and new topics require curriculum registration and activities. Do not mark unfinished topics ready until their activities exist.
 
 Deploy only after reviewing the development branch. The ZIP does not change GitHub or Google Drive.
 
@@ -31,3 +31,10 @@ Deploy only after reviewing the development branch. The ZIP does not change GitH
 - Run `python tools/build_quizzes.py` to validate and regenerate `generated/quiz-data.js`. Commit both the JSON and generated output. No additional dependency is needed for this build.
 - The shared renderer is `js/quiz-engine.js`. It supports variable question counts and one point per correct answer; no topic-specific quiz code is required. Both existing five-question quizzes retain their 80% pass threshold. Topic 1 retains manual completion; Topic 2 retains automatic completion on a pass and its last-score key. The quiz layout and feedback styling are now consistent.
 - Browser navigation was blocked in the authoring environment; local browser verification is required.
+
+## Edit or add a visual lab
+- `labs/<topic-id>.json` selects the component type. The business-intelligence JSON contains scenario headings, table rows, bar data, view labels and callouts; reuse its shape for other comparison labs. Keep values and explanatory text consistent.
+- Run `python tools/build_labs.py` to validate and generate `generated/lab-data.js`. Commit both sources and output.
+- `js/lab-engine.js` registers and mounts components with independent topic state. `js/labs/scenario-comparison.js` renders arbitrary configured tables and bar comparisons; `js/labs/workflow.js` retains the custom Connect / Transform / Visualize simulation. The latter still has a fixed fictional dataset and workflow; do not assume it is fully configurable.
+- V4 also guards the report step until cleaning is complete and derives city totals from the cleaned rows.
+- Local browser testing is required.
