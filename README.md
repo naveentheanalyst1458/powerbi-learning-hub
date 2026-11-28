@@ -1,4 +1,4 @@
-# Power BI Learning Hub — Modular V4
+# Power BI Learning Hub — Modular V5
 
 Development preview based on the approved Topics 1 & 2 version, not on the older single-lesson production site. The original visual labs, practice, quiz questions and topic completion rules are preserved; both quizzes use a common renderer. The notes use Markdown with trusted HTML for existing richly styled tables and callouts.
 
@@ -38,3 +38,10 @@ Deploy only after reviewing the development branch. The ZIP does not change GitH
 - `js/lab-engine.js` registers and mounts components with independent topic state. `js/labs/scenario-comparison.js` renders arbitrary configured tables and bar comparisons; `js/labs/workflow.js` retains the custom Connect / Transform / Visualize simulation. The latter still has a fixed fictional dataset and workflow; do not assume it is fully configurable.
 - V4 also guards the report step until cleaning is complete and derives city totals from the cleaned rows.
 - Local browser testing is required.
+
+## Add or update a student resource
+- Upload only approved fictional or public training files to Drive. Keep the project folder private; share each student resource with Anyone with the link / Viewer and verify downloading is allowed.
+- Add an entry in `resources/<topic-id>.json` with title, filename, description, type, details and URL. Topic IDs match `config/course.js`. An empty array means no resources yet.
+- Run `python tools/build_resources.py`; commit source and generated output together.
+- `js/resource-engine.js` renders the Resources tab without topic-specific code. Links open Drive in a new tab; downloads are managed by Drive. The site itself works offline, but these links require internet. No live Drive API, credentials or automatic synchronisation is embedded.
+- V5 includes the approved Topic 1 Retail weekly sales CSV. Topic 2 deliberately has no resource yet. Test the link in a signed-out or InPrivate browser before publishing.
